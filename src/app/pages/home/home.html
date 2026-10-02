@@ -1,0 +1,60 @@
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <p class="eyebrow">{{ 'hero.eyebrow' | translate }}</p>
+    <h1 id="hero-title">
+      {{ 'hero.greeting' | translate }}
+      <span class="hero__name">{{ 'hero.name' | translate }}</span>
+    </h1>
+    <p class="hero__tagline">{{ 'hero.tagline' | translate }}</p>
+
+    <div class="hero__actions">
+      <a class="button button--primary" routerLink="/" fragment="projects">
+        {{ 'hero.cta.projects' | translate }}
+      </a>
+      <a class="button" routerLink="/" fragment="contact">
+        {{ 'hero.cta.contact' | translate }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <h2 id="projects-title">{{ 'projects.title' | translate }}</h2>
+    <p class="section__intro">{{ 'projects.intro' | translate }}</p>
+
+    <ul class="project-grid">
+      @for (project of projects; track project.id) {
+        <li>
+          <article class="card">
+            <h3>{{ project.titleKey | translate }}</h3>
+            <p>{{ project.descriptionKey | translate }}</p>
+
+            <ul class="tags">
+              @for (tag of project.tags; track tag) {
+                <li class="tag">{{ tag }}</li>
+              }
+            </ul>
+
+            @if (project.url) {
+              <a class="card__link" [href]="project.url">
+                {{ 'projects.view' | translate }}
+                <span class="visually-hidden">: {{ project.titleKey | translate }}</span>
+              </a>
+            }
+          </article>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <h2 id="contact-title">{{ 'contact.title' | translate }}</h2>
+    <p class="section__intro">{{ 'contact.text' | translate }}</p>
+    <a class="button button--primary" [href]="'mailto:' + email">
+      {{ 'contact.cta' | translate }}
+    </a>
+  </div>
+</section>

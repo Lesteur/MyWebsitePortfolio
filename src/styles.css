@@ -1,3 +1,137 @@
-/* You can add global styles to this file, and also import other style files */
+/* Design tokens: light-dark() follows the OS theme; every pair meets WCAG AA contrast */
+:root {
+  color-scheme: light dark;
 
-@import "tailwindcss";
+  --bg: light-dark(#fafaf7, #0f1117);
+  --surface: light-dark(#ffffff, #171a23);
+  --text: light-dark(#1a1a1a, #ececf1);
+  --muted: light-dark(#555555, #a0a4b0);
+  --border: light-dark(#d9d9d2, #2a2e3b);
+  --control-border: light-dark(#767676, #8a8f9e);
+  --accent: light-dark(#3b3bd9, #8f9bff);
+  --on-accent: light-dark(#ffffff, #0f1117);
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --radius: 0.75rem;
+  --space-section: clamp(3rem, 8vw, 6rem);
+}
+
+/* Reset and base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-block-start: 5rem; /* clears the sticky header on anchor jumps */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Layout and utilities */
+.container {
+  inline-size: min(100% - 2rem, 64rem);
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Buttons: secondary by default, add .button--primary for the filled style */
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Form controls */
+select {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--control-border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
