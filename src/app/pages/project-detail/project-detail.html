@@ -1,0 +1,54 @@
+<div class="container project">
+  <a class="back-link" routerLink="/" fragment="projects">
+    <span aria-hidden="true">←</span> {{ 'projectDetail.back' | translate }}
+  </a>
+
+  @if (project(); as p) {
+    <article class="project__body">
+      <header>
+        <h1 #heading tabindex="-1">{{ p.titleKey | translate }}</h1>
+        <p class="project__summary">{{ p.summaryKey | translate }}</p>
+      </header>
+
+      <dl class="facts">
+        <div class="fact">
+          <dt>{{ 'projectDetail.role' | translate }}</dt>
+          <dd>{{ p.roleKey | translate }}</dd>
+        </div>
+        <div class="fact">
+          <dt>{{ 'projectDetail.year' | translate }}</dt>
+          <dd>{{ p.year }}</dd>
+        </div>
+        <div class="fact">
+          <dt>{{ 'projectDetail.technologies' | translate }}</dt>
+          <dd>
+            <ul class="tags">
+              @for (tag of p.tags; track tag) {
+                <li class="tag">{{ tag }}</li>
+              }
+            </ul>
+          </dd>
+        </div>
+      </dl>
+
+      <p>{{ p.descriptionKey | translate }}</p>
+
+      @if (p.repoUrl || p.demoUrl) {
+        <div class="project__links">
+          @if (p.demoUrl) {
+            <a class="button button--primary" [href]="p.demoUrl">
+              {{ 'projectDetail.demo' | translate }}
+            </a>
+          }
+          @if (p.repoUrl) {
+            <a class="button" [href]="p.repoUrl">
+              {{ 'projectDetail.repo' | translate }}
+            </a>
+          }
+        </div>
+      }
+    </article>
+  } @else {
+    <p>{{ 'projectDetail.notFound' | translate }}</p>
+  }
+</div>

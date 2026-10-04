@@ -18,6 +18,28 @@
   </div>
 </section>
 
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container about">
+    <div>
+      <h2 id="about-title">{{ 'about.title' | translate }}</h2>
+      <p>{{ 'about.paragraph1' | translate }}</p>
+      <p>{{ 'about.paragraph2' | translate }}</p>
+      <a class="button" [href]="cvUrl()" download>
+        {{ 'about.cv' | translate }}
+      </a>
+    </div>
+
+    <div class="about__skills">
+      <h3>{{ 'about.skills' | translate }}</h3>
+      <ul class="tags">
+        @for (skill of skills; track skill) {
+          <li class="tag">{{ skill }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="projects" aria-labelledby="projects-title">
   <div class="container">
     <h2 id="projects-title">{{ 'projects.title' | translate }}</h2>
@@ -28,7 +50,7 @@
         <li>
           <article class="card">
             <h3>{{ project.titleKey | translate }}</h3>
-            <p>{{ project.descriptionKey | translate }}</p>
+            <p>{{ project.summaryKey | translate }}</p>
 
             <ul class="tags">
               @for (tag of project.tags; track tag) {
@@ -36,12 +58,11 @@
               }
             </ul>
 
-            @if (project.url) {
-              <a class="card__link" [href]="project.url">
-                {{ 'projects.view' | translate }}
-                <span class="visually-hidden">: {{ project.titleKey | translate }}</span>
-              </a>
-            }
+            <!-- Stretched link: the whole card is clickable, but there is a single link for assistive tech -->
+            <a class="card__link" [routerLink]="['/projects', project.id]">
+              {{ 'projects.view' | translate }}
+              <span class="visually-hidden">: {{ project.titleKey | translate }}</span>
+            </a>
           </article>
         </li>
       }

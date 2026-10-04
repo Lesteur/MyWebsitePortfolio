@@ -1,0 +1,59 @@
+.project {
+  padding-block: var(--space-section);
+}
+
+.project__body {
+  max-inline-size: 44rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-block-end: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Programmatic focus target only; no visible ring needed */
+h1:focus {
+  outline: none;
+}
+
+.project__summary {
+  color: var(--muted);
+  font-size: 1.25rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.fact dt {
+  margin-block-end: 0.25rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fact dd {
+  margin: 0;
+}
+
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block-start: 2rem;
+}
