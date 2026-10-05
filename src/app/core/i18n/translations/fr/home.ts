@@ -1,10 +1,10 @@
 import type { home as enHome } from '../en/home';
 
 export const home: Record<keyof typeof enHome, string> = {
-  'hero.eyebrow': 'Développeur logiciel',
+  'hero.eyebrow': 'Ingénieur informatique',
   'hero.greeting': 'Bonjour, je suis',
-  'hero.name': 'Votre Nom',
-  'hero.tagline': 'Je conçois des logiciels rapides, accessibles et maintenables.',
+  'hero.name': 'Adam Ibnouzahir',
+  'hero.tagline': 'Je suis spécialisé dans le développement de logiciels rapides, dans le système embarqué et dans la réalité virtuelle.',
   'hero.cta.projects': 'Voir mes réalisations',
   'hero.cta.contact': 'Me contacter',
 
