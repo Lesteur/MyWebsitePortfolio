@@ -10,13 +10,19 @@ export const home: Record<keyof typeof enHome, string> = {
 
   'about.title': 'À propos de moi',
   'about.paragraph1':
-    'Racontez votre parcours ici : qui vous êtes, où vous vivez et ce qui vous motive.',
+    "Je suis actuellement étudiant à l'ISIMA. Je suis passionné par l'informatique\
+    depuis l'école primaire quand j'ai commencé à programmer avec Scratch. Cette\
+    passion m'a ensuite poussé à explorer davantage ce domaine et à découvrir les\
+    langages de programmation en commençant par Python et Java.",
   'about.paragraph2':
-    'Ajoutez un second paragraphe sur votre expérience, votre façon de travailler et ce que vous recherchez.',
+    "Je m'intéresse à beaucoup de choses dans l'informatique et la technologie,\
+    que ce soit la réalité virtuelle, les systèmes embarqués et le développement\
+    de logiciels. J'ai pu développé un attrait pour les cartes électroniques en\
+    travaillant avec Arduino.",
   'about.skills': 'Compétences',
   'about.cv': 'Télécharger mon CV (PDF)',
 
   'contact.title': 'Contact',
-  'contact.text': 'Un projet en tête, ou simplement envie de dire bonjour ? Envoyez-moi un e-mail.',
+  'contact.text': "Si vous avez une opportunité à me proposer, n'hésitez pas à m'envoyer un mail.",
   'contact.cta': 'Envoyer un e-mail',
 };

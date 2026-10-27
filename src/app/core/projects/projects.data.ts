@@ -27,20 +27,21 @@ const DEFINITIONS: readonly ProjectDefinition[] = [
   {
     id: 'one',
     year: 2026,
-    tags: ['Angular', 'TypeScript'],
-    repoUrl: 'https://example.com/repo-one',
-    demoUrl: 'https://example.com/demo-one',
+    tags: ['Software', "Video Game", "Programming", 'Framework', 'Visual Studio', 'C#', 'MonoGame'],
+    repoUrl: 'https://github.com/Lesteur/FreedomEngine',
   },
   {
     id: 'two',
     year: 2025,
-    tags: ['C#', 'MonoGame'],
-    repoUrl: 'https://example.com/repo-two',
+    tags: ['Virtual Reality', 'Oculus Quest 2', "Video Game", "Programming", 'Framework', 'Visual Studio', 'C#', 'Unity'],
+    repoUrl: 'https://gitlab.isima.fr/adibnouzah/unity-fps-project',
   },
   {
     id: 'three',
-    year: 2024,
-    tags: ['Node.js', 'PostgreSQL'],
+    year: 2023,
+    tags: ['Software', 'Video Game', 'Programming', 'GameMaker'],
+    repoUrl: 'https://github.com/Lesteur/MyRPG',
+    demoUrl: 'https://gx.games/games/0aro9s/1er-premier-prototype-rpg-gamemaker/tracks/d2ff313c-0cb6-4133-883e-b237aaf229ea/',
   },
 ];
 
