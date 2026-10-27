@@ -24,7 +24,7 @@ export class Home {
   private readonly i18n = inject(I18nService);
 
   protected readonly email = 'hello@example.com';
-  protected readonly skills = ['Angular', 'TypeScript', 'HTML & CSS', 'Git'];
+  protected readonly skills = ['Angular', 'TypeScript', 'HTML & CSS', 'Git', 'C#', "C/C++", "Python", "Java", "Unity", "Matlab", "Arduino"];
   protected readonly projects = PROJECTS;
 
   /** The résumé matches the active language */
